@@ -68,6 +68,7 @@ LLM_PROVIDERS = {
         "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
         "desc":"Open source Meta","icon":"L"},
 }
+DEFAULT_PROVIDER = "Gemini 2.5 Flash"
 
 st.set_page_config(page_title="RAG Informatique Maroc",page_icon="M",
                    layout="wide",initial_sidebar_state="expanded")
@@ -316,14 +317,14 @@ def generate(query, mode, niveau, provider_name, k=TOP_K):
     try:
         return call_llm(prompt, provider_name), results
     except Exception as e:
-        st.error(f"Erreur LLM: {e}")
+        st.error(f"Erreur LLM ({provider_name}): {e}")
         return None, []
 
 # ── Session state ─────────────────────────────
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "provider" not in st.session_state:
-    st.session_state.provider = DEFAULT_PROVIDER
+    st.session_state["provider"] = list(LLM_PROVIDERS.keys())[0]
 
 # ── Sidebar ───────────────────────────────────
 with st.sidebar:
