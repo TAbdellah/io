@@ -109,12 +109,12 @@ data/
 
 ### Niveaux couverts
 
-| Niveau | Correspondance | Compétences clés |
-|--------|---------------|-----------------|
-| **1AC** | 6ème Collège | C0, C11, C21, C22, C31 |
-| **2AC** | 5ème Collège | C0, C12, C13, C31, C32 |
-| **3AC** | 4ème/3ème Collège | C0, C11, C13, C23, C33 |
-| **TC** | Tronc Commun | Modules 1→4 (68h annuelles) |
+| Niveau |  Compétences clés |
+|--------|-----------------|
+| **1AC** | C0, C11, C21, C22, C31 |
+| **2AC** | C0, C12, C13, C31, C32 |
+| **3AC** | C0, C11, C13, C23, C33 |
+| **TC** | Modules 1→4 (68h annuelles) |
 
 ### Modèles IA disponibles
 
