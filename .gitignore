@@ -1,0 +1,6 @@
+.streamlit/secrets.toml
+.env_rag
+.venv/
+__pycache__/
+*.pyc
+pdfs/
