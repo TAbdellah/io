@@ -58,23 +58,18 @@ PROGRAMME = {
 LLM_PROVIDERS = {
     "Gemini 2.5 Flash":{
         "id":"gemini","model":"gemini-2.5-flash","secret":"GEMINI_API_KEY",
-        "desc":"Rapide, Fr/Ar, 1M tokens","icon":"G"},
-    "DeepSeek V3":{
-        "id":"openrouter","model":"deepseek/deepseek-chat:free",
-        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Excellent raisonnement","icon":"D"},
-    "DeepSeek R1":{
-        "id":"openrouter","model":"deepseek/deepseek-r1:free",
-        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Raisonnement avance","icon":"R"},
+        "desc":"Recommande - Rapide, Fr/Ar","icon":"G"},
+    "Gemini 2.0 Flash":{
+        "id":"gemini","model":"gemini-2.0-flash","secret":"GEMINI_API_KEY",
+        "desc":"Stable, multilingue","icon":"G"},
     "Llama 3.3 70B":{
         "id":"openrouter","model":"meta-llama/llama-3.3-70b-instruct:free",
         "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Open source Meta","icon":"L"},
-    "Qwen 2.5 72B":{
-        "id":"openrouter","model":"qwen/qwen-2.5-72b-instruct:free",
+        "desc":"Open source Meta - stable","icon":"L"},
+    "Mistral 7B":{
+        "id":"openrouter","model":"mistralai/mistral-7b-instruct:free",
         "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Alibaba, multilingue","icon":"Q"},
+        "desc":"Francais natif, leger","icon":"M"},
 }
 DEFAULT_PROVIDER = "Gemini 2.5 Flash"
 
