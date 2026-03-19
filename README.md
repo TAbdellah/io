@@ -225,7 +225,7 @@ OPENROUTER_API_KEY = "sk-or-..."
 6. Cliquez **"Deploy !"**
 
 L'application sera disponible sur une URL du type :
-`https://rag-maroc-XXXX.streamlit.app`
+`https://rag-maroc-????.streamlit.app`
 
 ---
 
