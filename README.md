@@ -315,15 +315,6 @@ Ce projet est destiné à la communauté des enseignants d'informatique marocain
 - 💡 **Suggérer une amélioration** : ouvrez une Discussion
 - 🔧 **Contribuer au code** : Fork → Branch → Pull Request
 
----
-
-## 📜 Références
-
-- [Instructions Officielles — Secondaire Collégial (MEN, 2006)](https://www.men.gov.ma)
-- [Instructions Officielles — Troncs Communs (MEN, 2005)](https://www.men.gov.ma)
-- [Charte Nationale d'Education et de Formation (CNEF)](https://www.men.gov.ma)
-
----
 
 <div align="center">
 
