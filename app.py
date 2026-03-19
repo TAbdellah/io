@@ -332,11 +332,44 @@ def generate(query, mode, niveau, provider_name, k=TOP_K):
         st.warning(f"Pertinence faible ({results[0]['score']:.2f}). Le PDF contient peu d'info sur ce sujet.")
 
     prompt = build_prompt(query, results, mode, niveau)
-    try:
-        return call_llm(prompt, provider_name), results
-    except Exception as e:
-        st.error(f"Erreur LLM ({provider_name}): {e}")
-        return None, []
+
+    # Build fallback list: chosen model first, then Gemini, then others
+    all_providers = list(LLM_PROVIDERS.keys())
+    fallback_order = [provider_name]
+    # Always try Gemini as first fallback (most reliable)
+    if "Gemini 2.5 Flash" in all_providers and "Gemini 2.5 Flash" != provider_name:
+        fallback_order.append("Gemini 2.5 Flash")
+    for p in all_providers:
+        if p not in fallback_order:
+            fallback_order.append(p)
+
+    last_error = None
+    for attempt_provider in fallback_order:
+        try:
+            answer = call_llm(prompt, attempt_provider)
+            if attempt_provider != provider_name:
+                st.info(f"Note: {provider_name} indisponible (quota). Reponse generee par {attempt_provider}.")
+            return answer, results
+        except Exception as e:
+            err_str = str(e)
+            is_rate_limit = "429" in err_str or "rate" in err_str.lower() or "quota" in err_str.lower()
+            is_not_found  = "404" in err_str or "not found" in err_str.lower()
+            last_error = e
+            if is_rate_limit or is_not_found:
+                # Try next model silently
+                continue
+            else:
+                # Unknown error — stop immediately
+                st.error(f"Erreur LLM ({attempt_provider}): {e}")
+                return None, []
+
+    # All models failed
+    st.error(
+        "Tous les modeles sont temporairement indisponibles (quota epuise). "
+        "Attendez quelques minutes et reessayez, ou utilisez Gemini 2.5 Flash "
+        "avec votre propre cle API dans les Secrets."
+    )
+    return None, []
 
 # ── Session state ─────────────────────────────
 if "messages" not in st.session_state:
