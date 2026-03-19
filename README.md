@@ -6,7 +6,7 @@
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/cloud)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
-[![License](https://img.shields.io/badge/Licence-MEN%20Maroc-2E7D32)](.)
+[![License](https://img.shields.io/badge/Licence-MIT-2E7D32)](./LICENSE)
 [![Gratuit](https://img.shields.io/badge/100%25-Gratuit-F9A825)](.)
 
 **Application web publique** — aucune installation, aucune clé API, aucun upload pour l'utilisateur final.
