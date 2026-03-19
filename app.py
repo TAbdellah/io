@@ -56,20 +56,35 @@ PROGRAMME = {
 }
 
 LLM_PROVIDERS = {
+    # ── Google (via cle GEMINI_API_KEY) ───────────────────────
     "Gemini 2.5 Flash":{
         "id":"gemini","model":"gemini-2.5-flash","secret":"GEMINI_API_KEY",
-        "desc":"Recommande - Rapide, Fr/Ar","icon":"G"},
-    "Gemini 2.0 Flash":{
-        "id":"gemini","model":"gemini-2.0-flash","secret":"GEMINI_API_KEY",
-        "desc":"Stable, multilingue","icon":"G"},
+        "desc":"Recommande | Rapide, Fr/Ar, 1M tokens","icon":"G"},
+    # ── OpenRouter gratuits (via cle OPENROUTER_API_KEY) ──────
     "Llama 3.3 70B":{
         "id":"openrouter","model":"meta-llama/llama-3.3-70b-instruct:free",
         "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Open source Meta - stable","icon":"L"},
-    "Mistral 7B":{
-        "id":"openrouter","model":"mistralai/mistral-7b-instruct:free",
+        "desc":"Meta | Meilleur usage general | 128K","icon":"L"},
+    "Mistral Small 3.1":{
+        "id":"openrouter","model":"mistralai/mistral-small-3.1-24b-instruct:free",
         "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
-        "desc":"Francais natif, leger","icon":"M"},
+        "desc":"Mistral | Francais natif | 128K","icon":"M"},
+    "Gemma 3 27B":{
+        "id":"openrouter","model":"google/gemma-3-27b-it:free",
+        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
+        "desc":"Google | Multilingue | 131K","icon":"G"},
+    "Hermes 3 Llama 405B":{
+        "id":"openrouter","model":"nousresearch/hermes-3-llama-3.1-405b:free",
+        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
+        "desc":"Nous Research | Tres puissant | 131K","icon":"H"},
+    "Nemotron 120B":{
+        "id":"openrouter","model":"nvidia/nemotron-3-super-120b-a12b:free",
+        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
+        "desc":"NVIDIA | Raisonnement | 262K","icon":"N"},
+    "OpenRouter Auto":{
+        "id":"openrouter","model":"openrouter/free",
+        "secret":"OPENROUTER_API_KEY","base_url":"https://openrouter.ai/api/v1",
+        "desc":"Auto | Choisit le meilleur dispo | 200K","icon":"A"},
 }
 DEFAULT_PROVIDER = "Gemini 2.5 Flash"
 
