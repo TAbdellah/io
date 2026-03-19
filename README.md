@@ -11,7 +11,7 @@
 
 **Application web publique** — aucune installation, aucune clé API, aucun upload pour l'utilisateur final.
 
-[Voir l'application →](https://votre-app.streamlit.app)
+[Voir l'application →](https://meninfo.streamlit.app/)
 
 </div>
 
